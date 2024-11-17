@@ -60,7 +60,7 @@ let kevinDeBruyne = TradingCard(
     attack: 100,
     total: 300,
     famousPlay: """
-    Kevin De Bruyne’s assist in the 2021 UEFA Champions League semi-final against PSG is one of his most iconic moments. In the second leg, with the aggregate score tied 1-1, De Bruyne made a precise pass through PSG’s defense to Riyad Mahrez, who finished calmly to give Manchester City a 2-1 aggregate lead. This goal, which came in the 11th minute, was crucial in City’s 2-0 victory, securing their place in their first-ever Champions League final
+    Kevin De Bruyne’s assist in the 2021 UEFA Champions League semi-final against PSG is one of his most iconic moments. In the second leg, with the aggregate score tied 1-1, De Bruyne made a precise pass through PSG’s defense to Riyad Mahrez, who finished calmly to give Manchester City a 2-1 aggregate lead. This goal, which came in the 11th minute, was crucial in City’s 2-0 victory, securing their place in their first-ever Champions League final.
 """)
 
 
@@ -88,12 +88,103 @@ struct ImageView: View {
                     }
                 }
             }
-            Spacer(minLength: 310)
         }
+    }
+}
+
+struct StatisticsView: View {
+    let player: TradingCard
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 35){
+            HStack{
+                Text("Nationality: ")
+                    .font(.custom("Palatino", size: 30)).bold()
+                Text(player.nationality)
+                    .font(.custom("Georgia", size: 25))
+                Spacer()
+            }
+            
+            HStack{
+                Text("Total Goals: ")
+                    .font(.custom("Palatino", size: 30)).bold()
+                Text("\(player.goals)")
+                    .font(.custom("Georgia", size: 25))
+                Spacer()
+            }
+            
+            HStack{
+                Text("Total Assists: ")
+                    .font(.custom("Palatino", size: 30)).bold()
+                Text("\(player.assists)")
+                    .font(.custom("Georgia", size: 25))
+                Spacer()
+            }
+            
+            Text("Player Ratings:")
+                .font(.custom("Palatino", size: 30)).bold()
+            
+            HStack{
+                VStack(spacing: 10){
+                    HStack{
+                        Spacer()
+                        Text("Attack: ")
+                            .font(.custom("Palatino", size: 25)).bold()
+                            .foregroundStyle(.red)
+                        Text("\(player.attack)")
+                            .font(.custom("Georgia", size: 25))
+                            .foregroundStyle(.red)
+                        Spacer()
+                    }
+                    
+                    HStack{
+                        Spacer()
+                        Text("Central: ")
+                            .font(.custom("Palatino", size: 25)).bold()
+                            .foregroundStyle(.yellow)
+                        Text("\(player.central)")
+                            .font(.custom("Georgia", size: 25))
+                            .foregroundStyle(.yellow)
+                        Spacer()
+                    }
+                    
+                    HStack{
+                        Spacer()
+                        Text("Defense: ")
+                            .font(.custom("Palatino", size: 25)).bold()
+                            .foregroundStyle(.blue)
+                        Text("\(player.defence)")
+                            .font(.custom("Georgia", size: 25))
+                            .foregroundStyle(.blue)
+                        Spacer()
+                    }
+                }
+                HStack{
+                    Spacer()
+                    Text("Total: ")
+                        .font(.custom("Palatino", size: 30)).bold()
+                        .foregroundStyle(.pink)
+                    Text("\(player.total)")
+                        .font(.custom("Georgia", size: 30))
+                        .foregroundStyle(.pink)
+                    Spacer()
+                }
+            }
+            
+            Text("Most Famous Play:")
+                .font(.custom("Palatino", size: 30)).bold()
+            
+            HStack{
+                Spacer()
+                Text("\(player.famousPlay)")
+                    .font(.custom("Palatino", size: 20))
+                Spacer()
+            }
+        }.padding()
     }
 }
 
 
 #Preview {
-    ImageView(player: erlingHaaland)
+    StatisticsView(player: erlingHaaland)
 }
