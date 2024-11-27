@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  CardDetailView.swift
 //  TradingCard
 //
-//  Created by Xinchen Ji on 2024-11-12.
+//  Created by Xinchen Ji on 2024-11-26.
 //
 
 import SwiftUI
 
-struct DetailView: View {
+struct CardDetailView: View {
     
     let player: TradingCard
     
@@ -42,5 +42,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(player: kevinDeBruyne)
+    CardDetailView(player: kevinDeBruyne)
 }
