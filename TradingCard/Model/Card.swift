@@ -13,6 +13,7 @@ struct TradingCard: Identifiable {
     let imageName: String
     let playerName: String
     let nationality: String
+    let number: Int
     let goals: Int
     let assists: Int
     let defence: Int
@@ -26,6 +27,7 @@ let erlingHaaland = TradingCard(
     imageName: "erlingHaaland",
     playerName: "Erling Haaland",
     nationality: "Norwegian",
+    number: 9,
     goals: 227,
     assists: 39,
     defence: 100,
@@ -40,6 +42,7 @@ let jackGrealish = TradingCard(
     imageName: "jackGrealish",
     playerName: "Jack Grealish",
     nationality: "English",
+    number: 10,
     goals: 55,
     assists: 63,
     defence: 80,
@@ -54,6 +57,7 @@ let kevinDeBruyne = TradingCard(
     imageName: "kevinDeBruyne",
     playerName: "Kevin De Bruyne",
     nationality: "Belgian",
+    number: 17,
     goals: 150,
     assists: 244,
     defence: 100,

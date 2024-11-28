@@ -14,8 +14,7 @@ struct CardDetailView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(red: 136 / 255, green: 180 / 255, blue: 230 / 255)
-                    .ignoresSafeArea(edges: .all)
+                LinearGradient(colors: .CityBlue, startPoint: <#T##UnitPoint#>, endPoint: <#T##UnitPoint#>)
                 ScrollView{
                     VStack{
                         ImageView(player: player)
@@ -24,17 +23,6 @@ struct CardDetailView: View {
                     }
                 }
                 .navigationTitle(player.playerName)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button{
-                        }label:{
-                            HStack{
-                                Image(systemName:"chevron.backward")
-                                Text("Back")
-                            }
-                        }
-                    }
-                }
             }
             .tint(.brown)
         }

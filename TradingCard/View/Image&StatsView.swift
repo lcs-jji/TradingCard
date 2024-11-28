@@ -22,19 +22,53 @@ struct ImageView: View {
                 Color(red: 246 / 255, green: 202 / 255, blue: 107 / 255)
                     .padding(45)
                 Image(player.imageName)
-                    .resizable().aspectRatio(contentMode: .fit).padding(60)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(60)
                 HStack{
-                    Spacer(minLength: 240)
+                    Spacer(minLength: 10)
+                    VStack{
+                        Spacer(minLength: 310)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.red)
+                                .rotationEffect(.degrees(60))
+                            RoundedRectangle(cornerRadius: 20)
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.cyan)
+                                .rotationEffect(.degrees(40))
+                            RoundedRectangle(cornerRadius: 20)
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.green)
+                                .rotationEffect(.degrees(20))
+                            RoundedRectangle(cornerRadius: 20)
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.blue)
+                                .opacity(0.9)
+                                .overlay {
+                                    Text("\(player.number)")
+                                        .font(.system(size: 80, weight: .bold, design: .monospaced))
+                                        .foregroundStyle(.bar)
+                                }
+                        }
+                    }
+                    Spacer(minLength: 150)
                     VStack{
                         Spacer(minLength: 310)
                         Image("manchesterCityLogo")
-                            .resizable().aspectRatio(contentMode: .fit)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
                 }
             }
         }
     }
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 struct StatisticsView: View {
     let player: TradingCard
@@ -130,5 +164,5 @@ struct StatisticsView: View {
 
 
 #Preview {
-    StatisticsView(player: erlingHaaland)
+    ImageView(player: erlingHaaland)
 }

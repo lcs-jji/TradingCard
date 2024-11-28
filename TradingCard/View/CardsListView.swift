@@ -16,7 +16,6 @@ struct CardsListView: View {
                 } label: {
                     CardsView(thingToShow: currentTradingCard)
                         .frame(height:150)
-                        .padding(.horizontal, 1)
                 }
             }
             .listStyle(.plain)
