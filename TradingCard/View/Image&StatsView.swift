@@ -32,32 +32,35 @@ struct ImageView: View {
                 HStack{
                     Spacer(minLength: 10)
                     VStack{
-                        Spacer(minLength: 310)
+                        Spacer(minLength: 300)
                         ZStack{
-                            RoundedRectangle(cornerRadius:25)
+                            Star()
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundStyle(Color("CityDarkBlue"))
                                 .rotationEffect(.degrees(60))
-                            RoundedRectangle(cornerRadius: 25)
+                                .opacity(0.8)
+                            Star()
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundStyle(Color("CityLightBlue"))
                                 .rotationEffect(.degrees(40))
-                            RoundedRectangle(cornerRadius: 25)
+                                .opacity(0.8)
+                            Star()
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundStyle(Color("CityYellow"))
                                 .rotationEffect(.degrees(20))
-                            RoundedRectangle(cornerRadius: 25)
+                                .opacity(0.8)
+                            Star()
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundStyle(Color("CityRed"))
                                 .opacity(0.9)
                                 .overlay {
                                     Text("\(player.number)")
-                                        .font(.system(size: 80, weight: .bold, design: .monospaced))
+                                        .font(.system(size: 120, weight: .bold, design: .monospaced))
                                         .foregroundStyle(.bar)
                                 }
                         }
                     }
-                    Spacer(minLength: 135)
+                    Spacer(minLength: 125)
                     VStack{
                         Spacer(minLength: 310)
                         Image("manchesterCityLogo")
