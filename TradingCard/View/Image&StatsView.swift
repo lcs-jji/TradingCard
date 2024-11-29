@@ -55,7 +55,7 @@ struct ImageView: View {
                                 .opacity(0.9)
                                 .overlay {
                                     Text("\(player.number)")
-                                        .font(.system(size: 120, weight: .bold, design: .monospaced))
+                                        .font(.system(size: 95, weight: .bold, design: .monospaced))
                                         .foregroundStyle(.bar)
                                 }
                         }
