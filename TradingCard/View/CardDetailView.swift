@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CardDetailView: View {
     
     let player: TradingCard
@@ -14,7 +15,9 @@ struct CardDetailView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                LinearGradient(colors: .CityBlue, startPoint: <#T##UnitPoint#>, endPoint: <#T##UnitPoint#>)
+                LinearGradient(colors: [
+                    Color("CityDarkBlue"), Color("CityLightBlue"), Color("CityYellow"), Color("CityRed")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
                 ScrollView{
                     VStack{
                         ImageView(player: player)

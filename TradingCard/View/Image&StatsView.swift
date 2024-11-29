@@ -15,11 +15,15 @@ struct ImageView: View {
     var body: some View {
         VStack{
             ZStack{
+                Color.clear
                 Color(red: 136 / 255, green: 180 / 255, blue: 230 / 255)
-                Color.white.padding(15)
-                Color(red: 240 / 255, green: 66 / 255, blue: 47 / 255)
-                    .padding(30)
+                    .opacity(0.4)
+                    .padding(15)
                 Color(red: 246 / 255, green: 202 / 255, blue: 107 / 255)
+                    .opacity(0.6)
+                    .padding(30)
+                Color(red: 240 / 255, green: 66 / 255, blue: 47 / 255)
+                    .opacity(0.8)
                     .padding(45)
                 Image(player.imageName)
                     .resizable()
@@ -30,21 +34,21 @@ struct ImageView: View {
                     VStack{
                         Spacer(minLength: 310)
                         ZStack{
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius:25)
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.red)
+                                .foregroundStyle(Color("CityDarkBlue"))
                                 .rotationEffect(.degrees(60))
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 25)
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.cyan)
+                                .foregroundStyle(Color("CityLightBlue"))
                                 .rotationEffect(.degrees(40))
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 25)
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.green)
+                                .foregroundStyle(Color("CityYellow"))
                                 .rotationEffect(.degrees(20))
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 25)
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(Color("CityRed"))
                                 .opacity(0.9)
                                 .overlay {
                                     Text("\(player.number)")
@@ -53,7 +57,7 @@ struct ImageView: View {
                                 }
                         }
                     }
-                    Spacer(minLength: 150)
+                    Spacer(minLength: 135)
                     VStack{
                         Spacer(minLength: 310)
                         Image("manchesterCityLogo")
